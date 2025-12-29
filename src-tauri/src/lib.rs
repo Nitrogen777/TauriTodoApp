@@ -15,7 +15,8 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![greet, 
             services::todo::get_list, 
             services::todo::add_todo, 
-            services::todo::finish_todo])
+            services::todo::finish_todo,
+            services::lane::get_price])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
